@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Festividad Religiosa | Santo Mártir San Expedito</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blanco: #ffffff;
+      --marfil: #fcfaf5;
+      --negro: #1c1c1c;
+      --gris: #666666;
+      --dorado: #c9a646;
+      --dorado-oscuro: #a8841f;
+      --borde: #e9dfc7;
+      --sombra: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(201,166,70,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(201,166,70,0.07) 0%, transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #faf7ef 100%);
+
+  color: var(--negro);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f3e8 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    #splash h1 {
+      margin: 0;
+      color: var(--negro);
+    }
+
+    #splash h2 {
+      margin-top: 8px;
+      color: var(--dorado-oscuro);
+    }
+
+    #splash button {
+      margin-top: 24px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: auto;
+      padding: 24px 16px 50px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--borde);
+      border-radius: 24px;
+      padding: 28px 22px;
+      margin-top: 22px;
+      box-shadow: var(--sombra);
+      animation: fadeIn 1s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-elegante {
+      background: linear-gradient(180deg, #fffdf8 0%, #fffaf0 100%);
+    }
+
+    .marco-dorado {
+      border: 1px solid var(--dorado);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .titulo-principal {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: 3px;
+      color: var(--negro);
+      margin: 0 0 10px;
+    }
+
+    .nombre-santo {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(34px, 6vw, 48px);
+      color: var(--dorado-oscuro);
+      margin: 6px 0;
+    }
+
+    .fecha-principal {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(24px, 4vw, 34px);
+      color: var(--dorado);
+      margin-top: 12px;
+    }
+
+    .highlight {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dorado-oscuro);
+    }
+
+    .separator {
+      font-size: 24px;
+      color: var(--dorado);
+      margin: 10px 0 4px;
+      letter-spacing: 6px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin: 10px 0;
+    }
+
+    .subtexto {
+      color: var(--gris);
+      font-size: 15px;
+    }
+
+    button {
+      background: linear-gradient(180deg, #e3c76f 0%, #c9a646 100%);
+      color: #111;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      margin: 8px 6px;
+      box-shadow: 0 6px 18px rgba(201, 166, 70, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(201, 166, 70, 0.35);
+    }
+
+    .logo img {
+      width: 110px;
+      max-width: 30%;
+      margin: 10px;
+      object-fit: contain;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #f1e6c8;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .countdown {
+      font-size: clamp(24px, 5vw, 34px);
+      font-weight: 800;
+      color: var(--dorado-oscuro);
+      letter-spacing: 1px;
+    }
+
+    .schedule-item {
+      margin: 8px 0;
+      padding: 10px 14px;
+      background: #fffaf0;
+      border: 1px solid #f0e5c9;
+      border-radius: 14px;
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    .iconos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .iconos img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      padding: 8px;
+      background: #fffaf0;
+      border: 1px solid #efdfb5;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .bloque-evento p {
+      margin: 12px 0;
+    }
+
+    .enlaces {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px 16px;
+        border-radius: 20px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .logo img {
+        width: 90px;
+      }
+    }
+/* ANIMACION PETALOS */
+.petalo {
+  position: fixed;
+  top: -10px;
+  width: 14px;
+  height: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #f5d98b,
+    #c9a646
+  );
+
+  border-radius: 60% 40% 60% 40%; /* forma de pétalo */
+
+  opacity: 0.85;
+
+  animation: caerPetalo 35s linear infinite; /* velocidad mas lenta de los petalos */
+
+  z-index: 0;
+
+  transform: rotate(25deg);
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+@keyframes caerPetalo {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* EFECTO VELA PARPADEO */
+.vela-animada {
+  animation: parpadeo 1.6s infinite ease-in-out;
+}
+
+@keyframes parpadeo {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.08); filter: brightness(1.3); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+/* COLORES DE VELAS SEGUN NOVENA */
+.vela-rojo { color: red; text-shadow: 0 0 6px red; }
+.vela-verde { color: green; text-shadow: 0 0 6px green; }
+.vela-naranja { color: orange; text-shadow: 0 0 6px orange; }
+.vela-lila { color: purple; text-shadow: 0 0 6px purple; }
+.vela-azul { color: blue; text-shadow: 0 0 6px blue; }
+.vela-amarillo { color: gold; text-shadow: 0 0 6px gold; }
+.vela-rosa { color: deeppink; text-shadow: 0 0 6px deeppink; }
+.vela-blanco { color: #ffffff; text-shadow: 0 0 6px #cccccc; }
+.vela-celeste { color: skyblue; text-shadow: 0 0 6px skyblue; }
+.vela-animada {
+  animation: parpadeo 1.6s infinite ease-in-out;
+}
+
+@keyframes parpadeo {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.08); filter: brightness(1.3); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+
+
+/* VELAS REALES POR COLOR */
+.vela-img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 8px;
+  animation: llamaSuave 1.8s infinite ease-in-out;
+}
+
+/* BRILLO SEGUN COLOR */
+.vela-rojo-glow { filter: drop-shadow(0 0 6px red); }
+.vela-verde-glow { filter: drop-shadow(0 0 6px green); }
+.vela-naranja-glow { filter: drop-shadow(0 0 6px orange); }
+.vela-lila-glow { filter: drop-shadow(0 0 6px purple); }
+.vela-azul-glow { filter: drop-shadow(0 0 6px blue); }
+.vela-amarillo-glow { filter: drop-shadow(0 0 6px gold); }
+.vela-rosa-glow { filter: drop-shadow(0 0 6px deeppink); }
+.vela-blanco-glow { filter: drop-shadow(0 0 6px #cccccc); }
+.vela-celeste-glow { filter: drop-shadow(0 0 6px skyblue); }
+
+@keyframes llamaSuave {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+/* BRILLO DORADO SUAVE EN MOVIMIENTO */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 30% 40%, rgba(201,166,70,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(201,166,70,0.10) 0%, transparent 50%);
+
+  animation: brilloDorado 18s ease-in-out infinite alternate;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes brilloDorado {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- CONTENEDOR DE PETALOS ANIMADOS -->
+<div id="petalos-container"></div>
+
+  <div id="splash">
+    <h1 class="titulo-principal">SANTO MÁRTIR</h1>
+    <h2 class="nombre-santo">San Expedito</h2>
+    <button onclick="abrirInvitacion()">Abrir Invitación</button>
+  </div>
+
+  <audio id="musica" loop preload="none">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+
+    <div class="card logo">
+      <h1 class="titulo-principal">FESTIVIDAD RELIGIOSA</h1>
+      <img src="logo1.png" alt="Logo principal de la familia o institución organizadora">
+      <img src="logo2.png" alt="Logo de la parroquia o comunidad religiosa participante">
+    </div>
+
+    <div class="card card-elegante marco-dorado">
+
+</p>
+      <h1 class="titulo-principal">FESTIVIDAD EN HONOR AL</h1>
+      <h2 class="nombre-santo">Santo Mártir San Expedito</h2>
+      <div class="separator">✦ ✦ ✦</div>
+      <div class="fecha-principal">24 · 04 · 2026</div>
+      <p class="subtexto">CON FE, GRATITUD Y DEVOCION</p>
+            <p>
+Con profunda fe y devoción, nos reunimos para rendir homenaje
+a nuestro Santo Patrono, protector de las causas justas y urgentes.
+</p>
+
+<p>
+Su presencia será un honor y una bendición en esta celebración
+de unidad, esperanza y devocion.
+    </div>
+
+    <div class="card gallery">
+      <img src="san_expedito.jpg" alt="Imagen central de San Expedito vestido de soldado romano sosteniendo una cruz y una palma, símbolo de fe y martirio">
+      <p class="subtexto">Glorioso mártir de las causas justas y urgentes</p>
+    </div>
+
+    <div class="card">
+      <h1 class="titulo-principal">INVITA LA FAMILIA</h1>
+      <p class="highlight">YARIGUAY CASTRO (Pasantes 2026)</p>
+      <p>
+        <strong>Y LOS CUSTODIOS:</strong><br>
+        Miguel, Ana Mar, Kalebh, <br>
+        Ennio, Indira y Annia
+      </p>
+      <p>
+        En agradecimiento por las bendiciones recibidas, con profunda fe y devoción
+        a nuestro Santo Patrono Mártir <strong>San Expedito</strong>, tenemos el honor
+        de invitarle a compartir esta festividad religiosa.
+      </p>
+    </div>
+
+    <div class="card card-elegante">
+      <h1 class="titulo-principal">INVITADO ESPECIAL</h1>
+      <p class="highlight" id="nombreInvitado">Nombre del Invitado</p>
+      <p>
+        Hemos reservado con aprecio<br>
+        <span class="highlight" id="numeroPases">2</span> pases en su honor.
+      </p>
+    </div>
+
+    <div class="card">
+      <h1 class="titulo-principal">Cuenta regresiva</h1>
+      <div id="countdown" class="countdown"></div>
+    </div>
+
+    <div class="card">
+      <h1 class="titulo-principal">Cronograma de Novenas</h1>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-rojo-glow">🕯️</span>Miércoles 15: Historia a San Expedito (Rojo)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-verde-glow">🕯️</span>Jueves 16: Pedimos por los enfermos (Verde)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-naranja-glow">🕯️</span>Viernes 17: Pedimos por la prosperidad (Naranja)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-lila-glow">🕯️</span>Sábado 18: Pedimos por el perdón (Lila)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-azul-glow">🕯️</span>Domingo 19: Pedimos por las familias (Azul)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-amarillo-glow">🕯️</span>Lunes 20: Pedimos por los jóvenes (Amarillo)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-rosa-glow">🕯️</span>Martes 21: Intercesión por matrimonios (Rosa)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-blanco-glow">🕯️</span>Miércoles 22: Intercesión por los niños (Blanco)</div>
+      <div class="schedule-item"><span class="vela-animada vela-img vela-celeste-glow">🕯️</span>Jueves 23: Intercesión por los viajeros (Celeste)</div>
+    </div>
+
+    <div class="card bloque-evento">
+      <h1 class="titulo-principal">Eventos Principales</h1>
+      <p class="highlight">Salón de Eventos “MARGARET PALACE”</p>
+      <p><strong>Vestimenta:</strong> Formal</p>
+
+      <p><strong>Misa de Salve</strong><br>Viernes 24/04/26 - 19:00 hrs</p>
+      <p><strong>Misa de Fiesta</strong><br>Sábado 25/04/26 - 14:30 hrs</p>
+      <p><strong>Misa de Calvario</strong><br>Domingo 26/04/26 - 14:00 hrs</p>
+    </div>
+
+    <div class="card">
+      <h1 class="titulo-principal">Oración a San Expedito</h1>
+      
+      <p>
+        Mi Santo Expedito de las causas justas y urgentes, socórreme en esta hora
+        de aflicción y desespero. Intercede por mí junto a Nuestro Señor Jesucristo.
+        Protégeme, ayúdame, dame fuerza, coraje y serenidad. Amén.
+      </p>
+    </div>
+<div class="card">
+  <h1 class="titulo-principal">Agradecimiento</h1>
+
+  <p>
+    Agradecemos profundamente su presencia en esta festividad,
+    que fortalece nuestra fe y unión como comunidad.
+  </p>
+
+  <p>
+    Que San Expedito bendiga su hogar con salud,
+    paz y prosperidad.
+  </p>
+</div>
+    <div class="card">
+      <h1 class="titulo-principal">Símbolos de la Fe</h1>
+      <div class="iconos">
+        <img src="vela.png" class="vela-animada" alt="Icono de vela encendida que representa fe y oración">
+        <img src="cruz.png" class="vela-animada" alt="Icono de cruz cristiana símbolo de la fe católica">
+        <img src="paloma.png" class="vela-animada" alt="Icono de paloma símbolo del Espíritu Santo y la paz">
+        <img src="calendario.png" class="vela-animada" alt="Icono de calendario que representa la fecha del evento religioso">
+      </div>
+    </div>
+
+    <div class="card">
+  <h1 class="titulo-principal">Enlaces</h1>
+
+  <!-- EVENTOS PRINCIPALES -->
+  <p class="highlight">✦ Eventos principales</p>
+
+  <div class="enlaces">
+    <button id="btnCalendar">📅 Agendar evento</button>
+    <button id="btnUbicacion">📍 Ubicación fiesta</button>
+    <button id="btnConfirmar">✅ Confirmar asistencia</button>
+  </div>
+
+  <!-- NOVENAS -->
+  <p class="highlight" style="margin-top:20px;">✦ Novenas</p>
+  <div class="enlaces">
+    <button id="btnNovenas">🕯️ Ver ubicación novenas</button>
+  </div>
+
+  <!-- OTROS -->
+  <p class="highlight" style="margin-top:20px;">✦ Recuerdos</p>
+  <div class="enlaces">
+    <button id="btnFotos">📷 Compartir fotografías</button>
+  </div>
+</div>
+</div>
+<footer>
+
+  © 2026 Festividad en honor al Santo Mártir San Expedito
+  <br>
+  Con fe, devoción y gratitud
+</footer>
+<br><br><br><br>
+
+</div>
+
+  <script>
+    function crearPetalos() {
+  const container = document.getElementById("petalos-container");
+
+  for (let i = 0; i < 15; i++) {
+    const petalo = document.createElement("div");
+    petalo.classList.add("petalo");
+
+    petalo.style.left = Math.random() * 100 + "vw";
+    petalo.style.animationDuration = (15 + Math.random() * 15) + "s";
+    petalo.style.opacity = Math.random();
+
+    container.appendChild(petalo);
+  }
+}
+
+crearPetalos();
+    function abrirInvitacion() {
+      document.getElementById("splash").style.display = "none";
+      const musica = document.getElementById("musica");
+      musica.play().catch(() => {
+        console.log("El navegador bloqueó la reproducción automática hasta otra interacción del usuario.");
+      });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("m");
+    const pases = params.get("n");
+
+    if (nombre) {
+      document.getElementById("nombreInvitado").textContent = nombre;
+    }
+
+    if (pases) {
+      document.getElementById("numeroPases").textContent = pases;
+    }
+
+    const eventDate = new Date("2026-04-24T19:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = "¡El evento ha comenzado!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    document.getElementById("btnCalendar").addEventListener("click", () => {
+      const url = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Festividad+San+Expedito&dates=20260424T190000/20260424T210000&details=Festividad+Religiosa&location=Margaret+Palace";
+      window.open(url, "_blank");
+    });
+
+    document.getElementById("btnUbicacion").addEventListener("click", () => {
+      window.open("https://maps.app.goo.gl/ywXbuUHDdnYbtmci7", "_blank");
+    });
+    document.getElementById("btnNovenas").addEventListener("click", () => {
+  window.open("https://maps.app.goo.gl/Dd5Rj2dehYETb5iN8", "_blank");
+});
+
+    document.getElementById("btnFotos").addEventListener("click", () => {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSfXGys8wOgCXM-CQQz8EUqQDYex-oWCMlDerIfimbahsSZkAQ/viewform", "_blank");
+    });
+
+    document.getElementById("btnConfirmar").addEventListener("click", () => {
+      const mensaje = "Confirmo mi asistencia a la festividad de San Expedito";
+      window.open("https://wa.me/59176461321?text=" + encodeURIComponent(mensaje), "_blank");
+    });
+  </script>
+
+</body>
+</html>
